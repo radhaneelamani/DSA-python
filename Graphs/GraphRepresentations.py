@@ -5,8 +5,7 @@ a. def adjacencyList()
 b. def adjacencyMatrix()
 c. def weightedAdjacencyList() - weighted graph 
 d. def weightedAdjacencyMatrix() - weighted graph
-e. def inputOutput()
-f. def inputOutputWeightedGraph()
+e. def StandardInputOutput()
 """
 
 def adjacencyMatrix(n,m):
@@ -32,7 +31,7 @@ def adjacencyMatrix(n,m):
     2. for printing the matrix row-wise: O(N) - optional
     Disadvantage: Very costly in terms of space, also has a lot of unused space filled with 0's
     """ 
-    return
+    return adjMatrix
 
 def adjacencyList(n,m):
     #Here our dictionary would be of size N
@@ -56,7 +55,7 @@ def adjacencyList(n,m):
     for directed graph: O(E)
     Time Complexity: O(M) for populating our list
     """
-    return 
+    return adjList
 
 def weightedAdjacencyMatrix(n,m):
     #This is the same as AdjMatrix the only difference is instead of storing 1's at the edge connections we will store its weights
@@ -73,7 +72,7 @@ def weightedAdjacencyMatrix(n,m):
         print(row)
     """
     Space and Time complexity are same as the unweighted approach"""
-    return
+    return weightedAdjacencyMatrix
 
 def weightedAdjacencyList(n,m):
     #This is the same as AdjList, but instead of simply the numbers in the list, we store a tuple of number and the weight
@@ -89,7 +88,7 @@ def weightedAdjacencyList(n,m):
         else:
             weightedAdjList[v] = [(u,w)]
     print("Final WeightedAdjacency List: ", weightedAdjList)
-    return
+    return weightedAdjList
 
 def standardInputOutput():
     #It is a standard practice all over that the first line of input is 2 integers n and m
@@ -98,10 +97,12 @@ def standardInputOutput():
     n,m = map(int, input("Enter number of nodes and edges: ").split())
     return n,m
 
-n,m = standardInputOutput()
-adjacencyMatrix(n,m)
-adjacencyList(n,m)
-weightedAdjacencyMatrix(n,m)
-weightedAdjacencyList(n,m)
+if __name__ == "__main__":
+    n, m = standardInputOutput()
+    adjacencyMatrix(n, m)
+    adjacencyList(n, m)
+    weightedAdjacencyMatrix(n, m)
+    weightedAdjacencyList(n, m)
+
 
 
